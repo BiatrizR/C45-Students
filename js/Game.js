@@ -160,16 +160,12 @@ class Game {
       collected.remove();
     });
 
-    // !!Adcionar combustivel
-    if (player.fuel > 0 && this.playerMoving) {
-      player.fuel -= 0.3;
-    }
+    // !! diminuir combustivel se maior que 0
 
-    //!! Chamar game over
-    if (player.fuel <= 0) {
-      gameState = 2;
-      this.gameOver();
-    }
+
+    //!! Chamar game over e mudar estado do jogo
+   
+  
   }
 
   handlePowerCoins(index) {
@@ -208,7 +204,7 @@ showLeaderboard() {
     (players[0].rank === 0 && players[1].rank === 0) ||
     players[0].rank === 1
   ) {
-    // &emsp;    Esta tag é usada para exibir quatro espaços.
+    // &emsp; => Esta tag é usada para exibir quatro espaços.
     leader1 =
       players[0].rank +
       "&emsp;" +
@@ -270,17 +266,10 @@ showRank() {
       "https://raw.githubusercontent.com/vishalgaddam873/p5-multiplayer-car-race-game/master/assets/cup.png",
     imageSize: "100x100",
     confirmButtonText: "Ok"
-  });}
+  });
+}
 
   //? adicionar game over
   gameOver() {
-    swal({
-      title: `Fim de Jogo`,
-      text: "Ops, você perdeu a corrida....!!!",
-      imageUrl:
-        "https://cdn.shopify.com/s/files/1/1061/1924/products/Thumbs_Down_Sign_Emoji_Icon_ios10_grande.png",
-      imageSize: "100x100",
-      confirmButtonText: "Obrigado por Jogar"
-    });
-  }
+   
 }
